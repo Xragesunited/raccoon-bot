@@ -34,7 +34,7 @@ client.on("message", async message => {
                 msg.edit(`:flushed: Returned\nLatency is ${Math.floor(msg.createdTimestamp - message.createdTimestamp)}\nAPI Latency ${Math.round(client.ping)}ms `)
             break;
             case "github" :
-                message.channel.send("this bot is hosted on: ")
+                message.channel.send("Github page: ");
             break;
             default:
                 message.channel.send(":pensive: Could not recongnize that command");
