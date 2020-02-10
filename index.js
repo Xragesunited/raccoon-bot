@@ -34,11 +34,10 @@ client.on("message", async message => {
                 msg.edit(`:flushed: Returned\nLatency is ${Math.floor(msg.createdTimestamp - message.createdTimestamp)}\nAPI Latency ${Math.round(client.ping)}ms `)
             break;
             case "github" :
-                message.channel.send("Github page: ");
+                message.channel.send("Github page: https://github.com/Xragesunited/raccoon-bot");
             break;
             default:
                 message.channel.send(":pensive: Could not recongnize that command");
-                // msg.edit(`:flushed: Returned\nLatency is `)
             break;
         }
 
