@@ -41,6 +41,15 @@ client.on("message", async message => {
                 "You may rely on it", "Concentrate and ask again", "As I see it, yes",	"Don't count on it",	"Most likely", "My reply is no", "Outlook good", "My sources say no", "Yes", "Outlook not so good",	
                 "Signs point to yes", "Very doubtful"];
                 const question = args.join(" ");
+
+                if(question == ""){ 
+                    message.channel.send("No question has been asked :thinking:??");
+                    return;
+                }
+                if(!question.endsWith("?")){
+                    message.channel.send("This does not look like an question to me :angry:");
+                    return;
+                }
                 const answer = options[Math.floor(Math.random() * options.length)];
 
                 const embed = new RichEmbed()
@@ -64,6 +73,8 @@ client.on("message", async message => {
                     .setFooter(client.user.username, client.user.displayAvatarURL);
 
                     message.channel.send(embed);
+                }else{
+                    message.channel.send(args.slice(0).join(" "));
                 }
 
             break;
